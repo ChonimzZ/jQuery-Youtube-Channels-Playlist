@@ -8,10 +8,30 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/ycp.css">
+	<style>
+		input[type='text'] {
+			padding: 10px;
+			border: 0px;
+			width: 300px;
+			background: #eee;
+			margin: 5px
+		}		
+		input[type='submit'] {
+			width: 50px;
+			padding: 10px;
+			border: 0px;
+			background: #2879d0;
+			color: #fff;
+			cursor: pointer;
+			margin: 5px
+		}
+	</style>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	<script src="//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
 
     <title>Jquery-youtube-channels-playlist by bachors</title>
   </head>
@@ -28,37 +48,55 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Features</h3>
+<ul>
+<li>you can customize width and height of the widget on your website.</li>
+<li>the widget itself is responsive; given a width (or %) for the widget, the inner contents will resize accordingly.</li>
+<li>a top featured video can be opened in the video player on load of the widget.</li>
+<li>displays your actual complete youtube channel on your website just like its shown on youtube.</li>
+<li>multi channel playlist.</li>
+</ul>
+
           <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Sample</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<pre class="prettyprint">&lt;!-- CSS --&gt;
+&lt;link type="text/css" rel="stylesheet" href="css/ycp.css" /&gt;
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+&lt;!-- Selector by Id --&gt;
+&lt;div id="unix" data-ycp_title="#Demo - Bachors.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"&gt;&lt;/div&gt; &lt;!-- By ChannelId --&gt;
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+&lt;!-- Selector by ClassName --&gt;
+&lt;div class="demo" data-ycp_title="#Javascript - Sekolah Koding" data-ycp_channel="PLCZlgfAG0GXAiH1acKFPx8EtpJAq44gjP"&gt;&lt;/div&gt; &lt;!-- By PlayListId --&gt;
+&lt;div class="demo" data-ycp_title="#News - Vevo Uk" data-ycp_channel="vevouk"&gt;&lt;/div&gt; &lt;!-- By UserName --&gt;
+
+&lt;!-- jQuery --&gt;
+&lt;script src="//code.jquery.com/jquery-2.1.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/ycp.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(function() {
+        
+    $("#unix").ycp({
+        apikey : 'xxxxxxxxxxxxxxxx',
+        playlist : 7,
+        autoplay : true,
+        related : true
+    });
+			
+    $(".demo").ycp({
+        apikey : 'xxxxxxxxxxxxxxxx'
+    });
+            
+});
+&lt;/script&gt;</pre>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Demo</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
         </section>
 
         <aside id="sidebar">
@@ -75,8 +113,63 @@ $ git checkout gh-pages
 
           <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
+		<p align="center">
+			<input id="tit" type="text" placeholder="Title">
+			<input id="ch" type="text" placeholder="ChannelId or UserName or PlayListId">
+			<input id="go" type="submit" value="Go">
+		</p>
+		
+		<br>
+		<!-- Selector by Id -->
+		<div id="unix" data-ycp_title="#Demo - Bachors.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"></div> <!-- By ChannelId -->
+		<br><br>
+		
+		<!-- Selector by ClassName -->
+		<div class="anu" data-ycp_title="#Javascript - Sekolah Koding" data-ycp_channel="PLCZlgfAG0GXAiH1acKFPx8EtpJAq44gjP"></div> <!-- By PlayListId -->
+		<br><br>
+		<div class="anu" data-ycp_title="#News - Vevo Uk" data-ycp_channel="vevouk"></div> <!-- By UserName -->
       </div>
     </div>
+
+		<!-- include jQuery -->
+		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		<!-- jQuery Youtube Channels Playlist -->
+		<script src="javascripts/ycp.min.js"></script>
+
+		<!-- Setting Example -->
+		<script>		
+		$(function() {
+		
+			$("#unix").ycp({
+				apikey : 'AIzaSyCj2GrDSBy6ISeGg3aWUM4mn3izlA1wgt0',
+				playlist : 7,
+				autoplay : false,
+				related : true
+			});
+			
+			$(".anu").ycp({
+				apikey : 'AIzaSyCj2GrDSBy6ISeGg3aWUM4mn3izlA1wgt0'
+			});
+		
+			$("#go").click(function(){
+				if($("#tit").val() != '' && $("#ch").val() != ''){
+					$("#unix").data('ycp_title', $("#tit").val());
+					$("#unix").data('ycp_channel', $("#ch").val());
+					$("#unix").ycp({
+						apikey : 'AIzaSyCj2GrDSBy6ISeGg3aWUM4mn3izlA1wgt0',
+						playlist : 10,
+						autoplay : true,
+						related : true
+					});
+				}else{
+					alert('Not empty!');
+				}
+				return false;
+			});
+			
+		});
+		</script>
 
   
   </body>
